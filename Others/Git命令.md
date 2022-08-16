@@ -42,6 +42,7 @@
 | git branch --contains 50089                               | # 显示包含提交50089的分支
 | git branch -a                                             | # 显示所有分支
 | git branch -r                                             | # 显示所有原创分支
+| git branch -d <Branch Name>                               | # 删除`Branch Name`分支
 | git branch --merged                                       | # 显示所有已合并到当前分支的分支
 | git branch --no-merged                                    | # 显示所有未合并到当前分支的分支
 | git branch -m master master_copy                          | # 本地分支改名
