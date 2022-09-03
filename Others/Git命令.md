@@ -1,5 +1,7 @@
 | | |
 | --- | --- |
+| vi xxx / torch xxx                                        | # 新建文件
+| mkdir xxx                                                 | # 新建文件夹
 | git init                                                  | # 初始化本地git仓库（创建新仓库）
 | git config --global user.name "xxx"                       | # 配置用户名
 | git config --global user.email "xxx@xxx.com"              | # 配置邮件
