@@ -17,22 +17,54 @@
     - [4.3 KL散度与平均互信息](#4.3)
 - [5. 关系总结](#5)
 ![关系总结](https://github.com/Catalyst0307/Pictures/blob/main/84442ad5932a4f919b6f2811eef9465d.png "关系总结") 
+
+
 # <span id="1">1. 自信息与熵</span>
 ## <span id="1.1">1.1 自信息</span>
   概率论中，随机事件是样本空间的子集。利用信息论可以对事件所包含的信息进行量化，得到信息量。事件所包含的不确定性越高，所含的信息量越大。  
-  假设$P(x_i)$
+  假设![](https://latex.codecogs.com/svg.image?P(x_i))
+
+
 ## <span id="1.2">1.2 熵</span>
+
+
 ## <span id="1.3">1.3 相对熵(KL散度)</span>
+
+
 ## <span id="1.4">1.4 JS散度</span>
+
+
 ## <span id="1.5">1.5 交叉熵</span>
+
+
 # <span id="2">2. 联合自信息与联合熵</span>
+
+
 ## <span id="2.1">2.1 联合自信息</span>
+
+
 ## <span id="2.2">2.2 联合熵</span>
+
+
 # <span id="3">3. 条件自信息与条件熵</span>
+
+
 ## <span id="3.1">3.1 条件自信息</span>
+
+
 ## <span id="3.2">3.2 条件熵</span>
+
+
 # <span id="4">4. 互信息</span>
+
+
 ## <span id="4.1">4.1 互信息</span>
+
+
 ## <span id="4.2">4.2 平均互信息</span>
+
+
 ## <span id="4.3">4.3 KL散度与平均互信息</span>
+
+
 # <span id="5">5. 关系总结</span>
