@@ -18,7 +18,6 @@
 - [5. 关系总结](#5)
 ![关系总结](https://github.com/Catalyst0307/Pictures/blob/main/84442ad5932a4f919b6f2811eef9465d.png "关系总结") 
 
-
 # <span id="1">1. 自信息与熵</span>
 ## <span id="1.1">1.1 自信息</span>
 概率论中，随机事件是样本空间的子集。利用信息论可以对事件所包含的信息进行量化，得到信息量。事件所包含的不确定性越高，所含的信息量越大。  
@@ -42,17 +41,18 @@
 
 - 除此之外，自信息还可描述`惊奇程度`  
 
+
 ## <span id="1.2">1.2 熵</span>
 如果离散随机变量 ___X___ 的分布规律为：  
 
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn.svg)  
+![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(1).svg)  
 
 则可求得随机变量 ___X___ 的平均信息量：  
 
 ![](https://latex.codecogs.com/svg.image?H(X)&space;=&space;-\sum_{i=1}^{n}p(x_i)\textrm{log}p(x_i))  
 
 称为随机变量 ___X___ 的**信息熵**。自信息用单个事件的结果计算。而熵对整个概率分布中的平均不确定性进行量化，是从平均意义上表征随随机变量的、总体特征的一个量。换言之，一个分布的熵指 从这个分布的随机变量所能产生的期望信息总和。
-- 当 ___X___ 的各个取值都是等概率![](https://latex.codecogs.com/svg.image?\frac{1}{n})时，不确定性最大，即熵为最大值：  
+- 当 ___X___ 的各个取值都是等概率 &thinsp;  ![](https://latex.codecogs.com/svg.image?\frac{1}{n}) &thinsp;  时，不确定性最大，即熵为最大值：  
 
 ![](https://latex.codecogs.com/svg.image?H_{max}&space;=&space;\textrm{log}_2n)  
 
@@ -63,8 +63,15 @@
 可视化为：   
 ![](https://github.com/Catalyst0307/Pictures/blob/main/e1e898d7804b4c6d8897683aef7f2531.png)  
 
-## <span id="1.3">1.3 相对熵(KL散度)</span>
 
+## <span id="1.3">1.3 相对熵(KL散度)</span>
+**相对熵或KL散度(Kullback-Leibler Divergence)** 是一种测量同一随机变量的不同概率分布(同一概率空间的不同概率测度)差异 &ensp; 的方法。若 _p_ 和 _q_ 为随机变量 __X__ 的两个概率分布，定义 _p_ 相对于 _q_ 的相对熵为：  
+![](https://latex.codecogs.com/svg.image?D_{KL}(p||q)=\sum_{1=1}^{n}p(x_i)log\frac{p(x_i)}{q(x_i)})  
+由经典不等式 &emsp; ln _x_ < _x_ - 1 &emsp; 得：  
+![](https://latex.codecogs.com/svg.image?\textrm{log}_2x<(\textrm{log}_2e)(x-1))  
+![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn.svg)  
+仅当所有![](https://latex.codecogs.com/svg.image?x_i), ![](https://latex.codecogs.com/svg.image?p(x_i)=q(x_i))时，等式成立。上式称为散度不等式，该式说明，一个概率分布相对于另一个概率分布的散度是非负的，仅当两分布相同时，散度为0。  
+> 散度并不是通常意义下的距离，如不满足对称性：![](https://latex.codecogs.com/svg.image?D_{KL}(p||q)\neq&space;D_{KL}(q||P))
 
 ## <span id="1.4">1.4 JS散度</span>
 
