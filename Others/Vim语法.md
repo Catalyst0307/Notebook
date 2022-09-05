@@ -106,4 +106,4 @@
 | --- | --- |
 | :set nu	| 显示行号，设定之后，会在每一行的前缀显示该行的行号
 | :set nonu	| 与 set nu 相反，为取消行号！
-![键位](https://github.com/Catalyst0307/Pictures/blob/main/vi-vim-cheat-sheet-sch.gif)
+![键位](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/vi-vim-cheat-sheet-sch.gif)
