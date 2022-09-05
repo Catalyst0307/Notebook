@@ -22,4 +22,4 @@ S.T.\ \  u^\mathrm{T}u = I_{m\times m}
 \end{cases}  
 $$  
 ```
-![效果展示](https://github.com/Catalyst0307/Pictures/blob/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(134).png)
+![效果展示](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(134).png)
