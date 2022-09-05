@@ -16,7 +16,7 @@
     - [4.2 平均互信息](#4.2)
     - [4.3 KL散度与平均互信息](#4.3)
 - [5. 关系总结](#5)
-![关系总结](https://github.com/Catalyst0307/Pictures/blob/main/84442ad5932a4f919b6f2811eef9465d.png "关系总结") 
+![关系总结](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/84442ad5932a4f919b6f2811eef9465d.png) 
 
 # <span id="1">1. 自信息与熵</span>
 ## <span id="1.1">1.1 自信息</span>
@@ -45,7 +45,7 @@
 ## <span id="1.2">1.2 熵</span>
 如果离散随机变量 ___X___ 的分布规律为：  
 
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(1).svg)  
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/CodeCogsEqn%20(1).svg)  
 
 则可求得随机变量 ___X___ 的平均信息量：  
 
@@ -58,7 +58,7 @@
 ![](https://latex.codecogs.com/svg.image?H(X)&space;=&space;-\left&space;[&space;p(X=1)\textrm{log}_2p(X=1)&plus;(X=0)\textrm{log}_2(X=0)&space;\right&space;]&space;&space;&space;&space;&space;&space;)  ![](https://latex.codecogs.com/svg.image?=&space;-&space;[\theta&space;\textrm{log}_2&space;\theta&space;&plus;(1-\theta)\textrm{log}_2(1-\theta)])  
 这被称为二熵值函数(Binary Entropy Function)。  
 可视化为：   
-![](https://github.com/Catalyst0307/Pictures/blob/main/e1e898d7804b4c6d8897683aef7f2531.png)  
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/e1e898d7804b4c6d8897683aef7f2531.png)  
 
 
 ## <span id="1.3">1.3 相对熵(KL散度)</span>
@@ -66,14 +66,14 @@
 ![](https://latex.codecogs.com/svg.image?D_{KL}(p||q)=\sum_{1=1}^{n}p(x_i)log\frac{p(x_i)}{q(x_i)})  
 由经典不等式 &emsp; ln _x_ < _x_ - 1 &emsp; 得：  
 ![](https://latex.codecogs.com/svg.image?\textrm{log}_2x<(\textrm{log}_2e)(x-1))  
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn.svg)  
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/CodeCogsEqn.svg)  
 仅当对所有![](https://latex.codecogs.com/svg.image?x_i), ![](https://latex.codecogs.com/svg.image?p(x_i)=q(x_i))时，等式成立。上式称为散度不等式，该式说明，一个概率分布相对于另一个概率分布的散度是非负的，仅当两分布相同时，散度为0。  
 > 散度并不是通常意义下的距离，如不满足对称性：![](https://latex.codecogs.com/svg.image?D_{KL}(p||q)\neq&space;D_{KL}(q||p))
 
 
 ## <span id="1.4">1.4 JS散度</span>、
 **JS散度(Jensen–Shannon Divergence)** 是一种对称的衡量两个分布相似度的度量方式，定义为：  
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(2).svg)  
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/CodeCogsEqn%20(2).svg)  
 > JS散度的缺陷：当两个分布完全不重叠时，即便两分布中心距离很近，JS散度仍为常数(log2)。  
 
 
@@ -89,7 +89,7 @@
 # <span id="2">2. 联合自信息与联合熵</span>
 ## <span id="2.1">2.1 联合自信息</span>
 二维离散型随机变量的联合分布为：  
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(3).svg)   
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/CodeCogsEqn%20(3).svg)   
 与独立自信息类似，联合自信息  
 ![](https://latex.codecogs.com/svg.image?I(x_iy_j)=-\textrm{log}_2p(x_iy_j))  
 当两事件相互独立时，联合自信息为两事件自信息之和：  
@@ -111,7 +111,7 @@
 
 ## <span id="3.2">3.2 条件熵</span>
 两离散变量 _X_ 和 _Y_ 的样本空间组成的概率矩阵为  
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(4).svg) &emsp; 则  
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/CodeCogsEqn%20(4).svg) &emsp; 则  
 1. 事件和随机变量的**条件熵(Conditional Entropy)**：  
 ![](https://latex.codecogs.com/svg.image?H(X|y_i)=-\sum_{i=1}^{m}p(x_i|y_j)\textrm{log}p(x_i|y_j))  
 2. 随机事件和随机事件的条件熵：  
@@ -125,7 +125,7 @@
 ![](https://latex.codecogs.com/svg.image?I(x_i;y_j)=I(x_i)-I(x_i|y_j)=\textrm{log}_2\frac{p(x_i|y_j)}{x_i})  
 表示：1.已知事件&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;后所消除的关于事件&ensp;![](https://latex.codecogs.com/svg.image?x_i)&ensp;的不确定性；2. 事件&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;出现给出现关于事件&ensp;![](https://latex.codecogs.com/svg.image?x_i)&ensp;的信息量。  
 互信息具有对称性：  
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(6).svg)  
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/CodeCogsEqn%20(6).svg)  
 
 
 ## <span id="4.2">4.2 平均互信息</span>
@@ -134,7 +134,7 @@
 ![](https://latex.codecogs.com/svg.image?I(X;y_j)=\sum_{i=1}^{m}p(x_i|y_j)I(x_i;y_j)=\sum_{i=1}^{m}p(x_i|y_j)\textrm{log}\frac{p(x_i|y_j)}{p(x_i)})  
 可见，&ensp; ![](https://latex.codecogs.com/svg.image?I(X;y_j)) &ensp;是互信息&ensp;![](https://latex.codecogs.com/svg.image?I(x_i;y_j))&ensp;在样本空间&ensp;![](https://latex.codecogs.com/svg.image?p(X|Y=y_j))&ensp;中的平均统计值。其含义为由事件&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;提供的关于集合 _X_ 的平均互信息。  
 随机变量 _X_ 和 _Y_ 之间的平均互信息的定义为：  
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(5).svg)  
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/CodeCogsEqn%20(5).svg)  
 可见，平均互信息 _I(X;Y)_ 是互信息&ensp; ![](https://latex.codecogs.com/svg.image?I(x_i;y_j)) &ensp;在 _X_ 和 _Y_ 联合分布中的统计平均值。并且具有对称性。  
 
 
@@ -146,9 +146,9 @@
 
 # <span id="5">5. 关系总结</span>
 自信息、条件自信息、联合自信息和互信息之间关系式如下：  
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(7).svg)  
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/CodeCogsEqn%20(7).svg)  
 信息熵、条件熵、联合熵及平均互信息之间关系式如下：  
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(8).svg)   
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/CodeCogsEqn%20(8).svg)   
 信息与熵：  
-![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(9).svg)  
-![](https://github.com/Catalyst0307/Pictures/blob/main/6f2818481c1243a58511fb2b0db2105a.png)
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/CodeCogsEqn%20(9).svg)  
+![](https://github.com/Catalyst0307/Pictures/blob/main/Notebook/ITaE/6f2818481c1243a58511fb2b0db2105a.png)
