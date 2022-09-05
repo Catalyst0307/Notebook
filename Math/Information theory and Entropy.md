@@ -53,12 +53,9 @@
 
 称为随机变量 ___X___ 的**信息熵**。自信息用单个事件的结果计算。而熵对整个概率分布中的平均不确定性进行量化，是从平均意义上表征随随机变量的、总体特征的一个量。换言之，一个分布的熵指 从这个分布的随机变量所能产生的期望信息总和。
 - 当 ___X___ 的各个取值都是等概率 &thinsp;  ![](https://latex.codecogs.com/svg.image?\frac{1}{n}) &thinsp;  时，不确定性最大，即熵为最大值：  
-
 ![](https://latex.codecogs.com/svg.image?H_{max}&space;=&space;\textrm{log}_2n)  
-
 - 对于二值随机变量 ___X___ ![](https://latex.codecogs.com/svg.image?\in&space;) {0,1}，有![](https://latex.codecogs.com/svg.image?p(X&space;=&space;1)&space;=&space;\theta)，![](https://latex.codecogs.com/svg.image?p(X&space;=&space;0)&space;=&space;1&space;-&space;\theta)，其熵为：  
-
-![](https://latex.codecogs.com/svg.image?H(X)&space;=&space;-\left&space;[&space;p(X=1)\textrm{log}_2p(X=1)&plus;(X=0)\textrm{log}_2(X=0)&space;\right&space;]&space;&space;&space;&space;&space;&space;)  ![](https://latex.codecogs.com/svg.image?=&space;-&space;[\theta&space;\textrm{log}_2&space;\theta&space;&plus;(1-\theta)\textrm{log}_2(1-\theta)])
+![](https://latex.codecogs.com/svg.image?H(X)&space;=&space;-\left&space;[&space;p(X=1)\textrm{log}_2p(X=1)&plus;(X=0)\textrm{log}_2(X=0)&space;\right&space;]&space;&space;&space;&space;&space;&space;)  ![](https://latex.codecogs.com/svg.image?=&space;-&space;[\theta&space;\textrm{log}_2&space;\theta&space;&plus;(1-\theta)\textrm{log}_2(1-\theta)])  
 这被称为二熵值函数(Binary Entropy Function)。  
 可视化为：   
 ![](https://github.com/Catalyst0307/Pictures/blob/main/e1e898d7804b4c6d8897683aef7f2531.png)  
@@ -70,13 +67,18 @@
 由经典不等式 &emsp; ln _x_ < _x_ - 1 &emsp; 得：  
 ![](https://latex.codecogs.com/svg.image?\textrm{log}_2x<(\textrm{log}_2e)(x-1))  
 ![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn.svg)  
-仅当所有![](https://latex.codecogs.com/svg.image?x_i), ![](https://latex.codecogs.com/svg.image?p(x_i)=q(x_i))时，等式成立。上式称为散度不等式，该式说明，一个概率分布相对于另一个概率分布的散度是非负的，仅当两分布相同时，散度为0。  
-> 散度并不是通常意义下的距离，如不满足对称性：![](https://latex.codecogs.com/svg.image?D_{KL}(p||q)\neq&space;D_{KL}(q||P))
+仅当对所有![](https://latex.codecogs.com/svg.image?x_i), ![](https://latex.codecogs.com/svg.image?p(x_i)=q(x_i))时，等式成立。上式称为散度不等式，该式说明，一个概率分布相对于另一个概率分布的散度是非负的，仅当两分布相同时，散度为0。  
+> 散度并不是通常意义下的距离，如不满足对称性：![](https://latex.codecogs.com/svg.image?D_{KL}(p||q)\neq&space;D_{KL}(q||p))
 
-## <span id="1.4">1.4 JS散度</span>
+
+## <span id="1.4">1.4 JS散度</span>、
+**JS散度(Jensen–Shannon Divergence)** 是一种对称的衡量两个分布相似度的度量方式，定义为：  
+![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(2).svg)  
+> JS散度的缺陷：当两个分布完全不重叠时，即便两分布中心距离很近，JS散度仍为常数(log2)。  
 
 
 ## <span id="1.5">1.5 交叉熵</span>
+
 
 
 # <span id="2">2. 联合自信息与联合熵</span>
