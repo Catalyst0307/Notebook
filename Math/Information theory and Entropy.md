@@ -78,31 +78,54 @@
 
 
 ## <span id="1.5">1.5 交叉熵</span>
-
+相对熵可拆解为：  
+![](https://latex.codecogs.com/svg.image?\begin{align*}&space;D_{KL}(p||q)&=\sum_{i=1}^{n}p(x_i)\textrm{log}\frac{p(x_i)}{q(x_i)}&space;\\&space;&=\sum_{i=1}^{n}p(x_i)\textrm{log}p(x_i)-\sum_{i=1}^{n}q(x_i)\textrm{log}q(x_i)&space;\\&space;&=&space;H(p)&plus;H(q)\end{align*})  
+若 _p_ 的分是已知的，则 _H(p)_ 为一个常数。此时：  
+![](https://latex.codecogs.com/svg.image?argmin_qD_{KL}(p||q)) &emsp; 等价于&emsp; ![](https://latex.codecogs.com/svg.image?argmin_qH(p,q))  
+所以优化计算时可将 _H(p)_ 省略，剩余的 _H(p,q)_ 就称为 **交叉熵(cross-entropy)** :  
+![](https://latex.codecogs.com/svg.image?H(p,q)=&space;-\sum_{i=1}^{n}p(x_i)\textrm{log}q(x_i))
 
 
 # <span id="2">2. 联合自信息与联合熵</span>
-
-
 ## <span id="2.1">2.1 联合自信息</span>
+二维离散型随机变量的联合分布为：  
+![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(3).svg)   
+与独立自信息类似，联合自信息  
+![](https://latex.codecogs.com/svg.image?I(x_iy_j)=-\textrm{log}_2p(x_iy_j))  
+当两事件相互独立时，联合自信息为两事件自信息之和：  
+![](https://latex.codecogs.com/svg.image?I(x_iy_j)=I(x_i)&plus;I(y_j))
 
 
 ## <span id="2.2">2.2 联合熵</span>
+**联合熵(Joint Entropy)** 定义为联合分布 _XY_ 上的每个元素对&ensp;![](https://latex.codecogs.com/svg.image?x_iy_j)&ensp;的数学期望，用 _H(XY)_ 或 _H(X,Y)_ 表示。  
+![](https://latex.codecogs.com/svg.image?H(XY)=-\sum_{i=1}^{m}\sum_{j=1}^{n}p(x_iy_j)\textrm{log}p(x_iy_j))
 
 
 # <span id="3">3. 条件自信息与条件熵</span>
-
-
 ## <span id="3.1">3.1 条件自信息</span>
+已知&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;的条件下，发生&ensp;![](https://latex.codecogs.com/svg.image?x_i)&ensp;的不确定性或信息量：  
+![](https://latex.codecogs.com/svg.image?I(x_i|y_j)=&space;-\textrm{log}_2p(x_i|y_j))  
+同样，  
+![](https://latex.codecogs.com/svg.image?I(y_j|x_i)=&space;-\textrm{log}_2p(y_j|x_i))
 
 
 ## <span id="3.2">3.2 条件熵</span>
+两离散变量 _X_ 和 _Y_ 的样本空间组成的概率矩阵为  
+![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(4).svg) &emsp; 则  
+1. 事件和随机变量的**条件熵(Conditional Entropy)**：  
+![](https://latex.codecogs.com/svg.image?H(X|y_i)=-\sum_{i=1}^{m}p(x_i|y_j)\textrm{log}p(x_i|y_j))  
+2. 随机事件和随机事件的条件熵：  
+![](https://latex.codecogs.com/svg.image?H(X|Y)=-\sum_{i=1}^{m}\sum_{j=1}^{n}p(y_j)p(x_i|y_j)\textrm{log}p(x_i|y_j)&space;=-\sum_{i=1}^{m}\sum_{j=1}^{n}p(x_iy_j)\textrm{log}p(x_i|y_j))  
+> ![](https://latex.codecogs.com/svg.image?H(X|Y))是![](https://latex.codecogs.com/svg.image?H(X|y_j))在 _Y_ 样本空间中的数学期望；也可看作联合自信息![](https://latex.codecogs.com/svg.image?I(x_i|y_j))在 _X_ 和 _Y_ 的联合样本空间中的数学期望。
 
 
 # <span id="4">4. 互信息</span>
-
-
 ## <span id="4.1">4.1 互信息</span>
+对于两个离散随机事件集 _X_ 和 _Y_   ，事件&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;的出现后关于&ensp;![](https://latex.codecogs.com/svg.image?x_i)&ensp;的信息量，定义为事件&ensp;![](https://latex.codecogs.com/svg.image?x_i)&ensp;和&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;的**互信息(Mutual Information)**，用&ensp;![](https://latex.codecogs.com/svg.image?I(x_i;y_j))&ensp;表示。  
+![](https://latex.codecogs.com/svg.image?I(x_i;y_j)=I(x_i)-I(x_i|y_j)=\textrm{log}_2\frac{p(x_i|y_j)}{x_i})  
+表示：1.已知事件&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;后所消除的关于事件&ensp;![](https://latex.codecogs.com/svg.image?x_i)&ensp;的不确定性；2. 事件&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;出现给出现关于事件&ensp;![](https://latex.codecogs.com/svg.image?x_i)&ensp;的信息量。  
+互信息具有对称性：  
+![](https://github.com/Catalyst0307/Pictures/blob/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(146).png)
 
 
 ## <span id="4.2">4.2 平均互信息</span>
