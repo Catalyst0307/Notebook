@@ -125,13 +125,30 @@
 ![](https://latex.codecogs.com/svg.image?I(x_i;y_j)=I(x_i)-I(x_i|y_j)=\textrm{log}_2\frac{p(x_i|y_j)}{x_i})  
 表示：1.已知事件&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;后所消除的关于事件&ensp;![](https://latex.codecogs.com/svg.image?x_i)&ensp;的不确定性；2. 事件&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;出现给出现关于事件&ensp;![](https://latex.codecogs.com/svg.image?x_i)&ensp;的信息量。  
 互信息具有对称性：  
-![](https://github.com/Catalyst0307/Pictures/blob/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(146).png)
+![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(6).svg)  
 
 
 ## <span id="4.2">4.2 平均互信息</span>
+![](https://latex.codecogs.com/svg.image?I(x_i;y_j))&ensp;是一个随机变量。而互信息从总体上度量了随机变量 _X_ 和 _Y_ 之间相互提供信息量的多少。  
+随机变量 _X_ 与事件&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;之间的互信息定义为：  
+![](https://latex.codecogs.com/svg.image?I(X;y_j)=\sum_{i=1}^{m}p(x_i|y_j)I(x_i;y_j)=\sum_{i=1}^{m}p(x_i|y_j)\textrm{log}\frac{p(x_i|y_j)}{p(x_i)})  
+可见，&ensp; ![](https://latex.codecogs.com/svg.image?I(X;y_j)) &ensp;是互信息&ensp;![](https://latex.codecogs.com/svg.image?I(x_i;y_j))&ensp;在样本空间&ensp;![](https://latex.codecogs.com/svg.image?p(X|Y=y_j))&ensp;中的平均统计值。其含义为由事件&ensp;![](https://latex.codecogs.com/svg.image?y_j)&ensp;提供的关于集合 _X_ 的平均互信息。  
+随机变量 _X_ 和 _Y_ 之间的平均互信息的定义为：  
+![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(5).svg)  
+可见，平均互信息 _I(X;Y)_ 是互信息&ensp; ![](https://latex.codecogs.com/svg.image?I(x_i;y_j)) &ensp;在 _X_ 和 _Y_ 联合分布中的统计平均值。并且具有对称性。  
+
 
 
 ## <span id="4.3">4.3 KL散度与平均互信息</span>
+如果随机变量 _X_ _Y_ 是独⽴的，那么他们的联合分布可以分解为边缘分布的乘积&ensp;![](https://latex.codecogs.com/svg.image?p(X,Y)=p(X)p(Y))&ensp;。如果变量不是独⽴的，那么我们可以通过考察联合概率分布与边缘概率分布乘积之间的KL散度来判断它们是否“接近”于相互独⽴。此时，KL散度为：
+![](https://latex.codecogs.com/svg.image?D_{KL}(p(X,Y)||p(X)p(Y))=-\sum_{i=1}^{m}\sum_{j=1}^{n}p(x_iy_j)\textrm{log}\frac{p(x_i)p(y_j)}{p(x_iy_j)})
 
 
 # <span id="5">5. 关系总结</span>
+自信息、条件自信息、联合自信息和互信息之间关系式如下：  
+![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(7).svg)  
+信息熵、条件熵、联合熵及平均互信息之间关系式如下：  
+![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(8).svg)   
+信息与熵：  
+![](https://github.com/Catalyst0307/Pictures/blob/main/CodeCogsEqn%20(9).svg)  
+![](https://github.com/Catalyst0307/Pictures/blob/main/6f2818481c1243a58511fb2b0db2105a.png)
